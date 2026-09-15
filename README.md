@@ -32,7 +32,7 @@ talking directly to each other.
   GIFs DO render inline from files in the repo, unlike mp4.
 -->
 
-<video src="https://drive.google.com/file/d/1AjBHP7Yr1JcEDpecRlqBsMpb40xJTq4a/view?usp=sharing" controls width="400"></video>
+<video src="https://github.com/user-attachments/assets/979993ae-ad5d-47c7-a319-3ef8d5878448" controls width="400"></video>
 
 *Video: MJPEG playback running on the Waveshare ESP32-S3-LCD-2.*
 

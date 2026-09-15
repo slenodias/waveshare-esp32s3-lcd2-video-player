@@ -1,0 +1,51 @@
+########################################################################
+# sdkconfig.defaults
+#
+# Only the settings that differ from ESP-IDF's stock defaults are listed
+# here (this is the normal, idiomatic way to write sdkconfig.defaults --
+# the full generated sdkconfig has thousands of derived SOC_* lines that
+# should NOT be hand-maintained).
+#
+# The PSRAM / flash values below were copied verbatim from the attached
+# 06_lvgl_example/sdkconfig, which is the Waveshare-provided reference
+# for this exact board. Do not change CONFIG_SPIRAM_CLK_IO / CS_IO /
+# MODE_OCT unless you know your board revision differs.
+########################################################################
+
+CONFIG_IDF_TARGET="esp32s3"
+
+# ---- Flash ------------------------------------------------------------
+# Waveshare ships this board with 16 MB flash (confirmed in 06_lvgl_example).
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="16MB"
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
+
+# ---- PSRAM (Octal, confirmed in 06_lvgl_example) -----------------------
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_TYPE_AUTO=y
+CONFIG_SPIRAM_CLK_IO=30
+CONFIG_SPIRAM_CS_IO=26
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_SPIRAM_USE_CAPS_ALLOC=y
+CONFIG_SPIRAM_ALLOW_STACK_EXTERNAL_MEMORY=y
+
+# ---- CPU clock ----------------------------------------------------------
+# The Waveshare LVGL example runs at the IDF default of 160 MHz. This
+# project deliberately raises it to 240 MHz because software JPEG
+# decoding is CPU-bound and benefits directly from the extra headroom.
+# This is a conscious deviation from the reference example, not a typo.
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+
+# ---- SPI / FATFS tuning for video streaming ------------------------------
+CONFIG_SPI_MASTER_ISR_IN_IRAM=y
+CONFIG_FATFS_ALLOC_PREFER_EXTRAM=y
+CONFIG_FATFS_VOLUME_COUNT=1
+
+# main task needs a bit more stack because of AVI header parsing on the stack
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=4096
+
+# Keep watchdog timeouts reasonable; decoding a large/corrupt frame should
+# not starve the idle task for more than a couple of seconds.
+CONFIG_ESP_TASK_WDT_TIMEOUT_S=10

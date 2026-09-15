@@ -1,0 +1,21 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "lcd_driver.c"
+        "sd_storage.c"
+        "avi_reader.c"
+        "jpeg_decoder.c"
+        "simple_font.c"
+        "video_player.c"
+        "spi_bus_lock.c"
+    INCLUDE_DIRS
+        "."
+    PRIV_REQUIRES
+        driver
+        esp_driver_ledc
+        esp_lcd
+        fatfs
+        sdmmc
+        nvs_flash
+        esp_new_jpeg
+)

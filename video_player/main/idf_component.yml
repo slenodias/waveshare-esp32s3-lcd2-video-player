@@ -1,0 +1,8 @@
+dependencies:
+  idf: ">=5.1"
+  # Espressif's official, actively-maintained software JPEG codec.
+  # ESP32-S3 has no hardware H.264/MJPEG decoder, so this component is
+  # what actually turns compressed MJPEG frames into RGB565 pixels.
+  # It uses the ESP32-S3's SIMD (Xtensa PIE) instructions internally
+  # for a meaningful speed boost over a generic C decoder.
+  espressif/esp_new_jpeg: "^1.0.0"

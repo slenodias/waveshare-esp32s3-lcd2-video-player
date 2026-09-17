@@ -1,6 +1,6 @@
-# ESP32-S3 SD-Card Video Player — Waveshare ESP32-S3-LCD-2
+# ESP32-S3 SD-Card Video Player — Waveshare ESP32-S3-LCD-2"
 
-A continuous-loop MJPEG video player for the Waveshare ESP32-S3-LCD-2.
+A continuous-loop MJPEG video player for the Waveshare ESP32-S3-LCD-2".
 Video is stored as an MJPEG/AVI file on a microSD card and streamed
 frame-by-frame from the SD card to the onboard 240×320 ST7789 LCD, with no
 audio support (this board has no audio hardware).
@@ -34,7 +34,7 @@ talking directly to each other.
 
 <video src="https://github.com/user-attachments/assets/979993ae-ad5d-47c7-a319-3ef8d5878448" controls width="400"></video>
 
-*Video: MJPEG playback running on the Waveshare ESP32-S3-LCD-2.*
+*Video: MJPEG playback running on the Waveshare ESP32-S3-LCD-2".*
 
 ---
 
@@ -73,7 +73,7 @@ RAM beyond a small, fixed pool of frame buffers.
 
 ## Hardware
 
-[Waveshare ESP32-S3-LCD-2](https://www.waveshare.com/esp32-s3-lcd-2.htm)
+[Waveshare ESP32-S3-LCD-2"](https://www.waveshare.com/esp32-s3-lcd-2.htm)
 
 <img src="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/e/s/esp32-s3-lcd-2-1.jpg" alt="Waveshare ESP32-S3-LCD-2 board" width="400">
 

@@ -1,7 +1,5 @@
 
 
-https://github.com/user-attachments/assets/0be22c30-faef-4898-a513-cbb5e6659a42
-
 # ESP32-S3 SD-Card Video Player — Waveshare ESP32-S3-LCD-2"
 
 A continuous-loop MJPEG video player for the Waveshare ESP32-S3-LCD-2".
